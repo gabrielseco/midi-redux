@@ -29,18 +29,14 @@ describe('PlayerReducer', () => {
     expect(result.instruments[0]).toBe('PIANO');
   });
 
-  it('should go to the default case if it does not match the action', () => {
+  it('should return the default state', () => {
     const action = {
       type: PlayerAction.PAUSE,
       payload: {}
     }
 
-    const result = MIDIPlayerReducer(undefined, action);
+    expect(MIDIPlayerReducer(undefined, action)).toEqual(initialState);
 
-    console.log('result is undefined', result);
-    console.log('niit', initialState);
-
-    expect(result).toEqual(initialState);
   });
 
 });
