@@ -1,6 +1,6 @@
 import PlayerAction from '../actions/PlayerActions';
 
-const initialState = {
+export const initialState = {
   tracks: [],
   isPlaying: false,
   instruments: [],
