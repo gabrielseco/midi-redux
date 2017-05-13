@@ -57,6 +57,7 @@
     "soundfont-player": "^0.10.5",
     "style-loader": "^0.15.0",
     "stylelint-webpack-plugin": "^0.7.0",
+    "web-audio-test-api": "^0.5.2",
     "webpack": "^2.2.1",
     "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "^1.14.1"
@@ -69,5 +70,9 @@
     "file-loader": "^0.10.1",
     "rc-progress": "^2.1.0",
     "react-bars": "^0.1.2"
+  },
+  "jest": {
+    "setupFiles": ["<rootDir>/config.js"]
+
   }
 }

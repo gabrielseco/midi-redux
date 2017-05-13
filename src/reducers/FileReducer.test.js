@@ -4,17 +4,20 @@ import { TestUtils } from '../utils/TestUtils';
 
 describe('FileAction', () => {
   it('should load a file', () => {
+    const song = 'Hedwig\'s theme';
+    const fileName = 'Harry_Potter.mp3';
+
     const action = {
       type: FileAction.LOAD_FILE,
       payload: {
-        song: 'Hedwig\'s theme',
-        fileName: 'Harry_Potter.mp3'
+        song,
+        fileName
       }
     }
     const result = MIDIFileReducer(initialState, action);
 
-    expect(result.song).toEqual('Hedwig\'s theme');
-    expect(result.fileName).toEqual('Harry_Potter.mp3');
+    expect(result.song).toEqual(song);
+    expect(result.fileName).toEqual(fileName  );
   });
 
   it('should return the default state ', () => {

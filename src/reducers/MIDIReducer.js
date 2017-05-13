@@ -1,7 +1,7 @@
 import MIDIAction from '../actions/MIDIActions';
 import { DEFAULT_TEMPO_BPM, DEFAULT_SIGNATURE } from '../constants/MIDIInstruments';
 
-const initialState = {
+export const initialState = {
   tempo: DEFAULT_TEMPO_BPM,
   tracks: [],
   deltaTime: 0,
@@ -10,7 +10,7 @@ const initialState = {
   audioContext: new AudioContext()
 };
 
-export default function MIDIEventsReducer(state=initialState, action) {
+export default function MIDIEventsReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
