@@ -4,12 +4,12 @@
   "description": "Read and play MIDI files using Redux (and React)",
   "main": "webpack.config.js",
   "scripts": {
-    "prestart": "npm run production",
     "start": "webpack-dev-server",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist node_modules bower_components",
     "production": "cross-env npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint app",
     "test": "jest",
+    "test:watch":"jest --watch --coverage",
     "precommit": "cross-env npm run lint && npm test",
     "prepush": "cross-env npm run lint && npm test"
   },
@@ -34,6 +34,7 @@
     "browser-sync-webpack-plugin": "^1.1.4",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.3",
+    "enzyme": "^2.8.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "general-midi": "github:elenatorro/general-midi",
     "html-webpack-plugin": "^2.28.0",
@@ -41,8 +42,8 @@
     "node-sass": "^4.5.0",
     "open-browser-webpack-plugin": "0.0.5",
     "path": "^0.12.7",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",
@@ -72,7 +73,11 @@
     "react-bars": "^0.1.2"
   },
   "jest": {
-    "setupFiles": ["<rootDir>/config.js"]
-
+    "setupFiles": [
+      "<rootDir>/config.js"
+    ],
+     "moduleNameMapper": {
+      "\\.(css|scss|jpg|png)$": "<rootDir>/empty-module.js"
+    }
   }
 }

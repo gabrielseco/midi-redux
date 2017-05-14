@@ -5,7 +5,7 @@ import { TestUtils } from '../utils/TestUtils';
 describe('MIDIReducer', () => {
   it('should test the general case', () => {
     Object.keys(MIDIAction).map(key => {
-      if(key === 'CONTROLLER') return
+      if(key === 'CONTROLLER') return;
       const action = {
         type: MIDIAction[key],
         payload: {
