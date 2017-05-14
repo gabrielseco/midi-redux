@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import store from '../../store/configureStore';
 import { Layout, mapStateToProps, mapDispatchToProps } from '.';
 import * as PlayerActions from '../../action-creators/PlayerActions';
