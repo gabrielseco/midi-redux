@@ -26,23 +26,13 @@ describe('Layout test', () => {
     });
   });
 
-  xit('should test mapDispatchToProps', () => {
-    const mock = {
-      playerActions: {
-        play: null,
-        stop: null,
-        pause: null
-      },
-      fileActions: {
-        readMidiFile: null
-      }
-    };
-    
-    mock.playerActions.play = function(){};
-    mock.playerActions.stop = function(){};
-    mock.playerActions.pause = function(){};
-    mock.fileActions.readMidiFile = function(){};
+  it('should test mapDispatchToProps', () => {
 
-    expect(mapDispatchToProps(store({}).dispatch)).toEqual(mock);
+    const props = mapDispatchToProps(store({}).dispatch);
+
+    expect(typeof props.fileActions.readMidiFile).toBe('function')
+    expect(typeof props.playerActions.play).toBe('function')
+    expect(typeof props.playerActions.stop).toBe('function')
+    expect(typeof props.playerActions.pause).toBe('function')
   });
 })
