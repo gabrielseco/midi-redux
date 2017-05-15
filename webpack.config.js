@@ -36,7 +36,16 @@ const
   UGLIFY_OPTIONS = {
     mangle: false,
     sourcemap: false
-  };
+  },
+
+  ESLINT_LOADER = {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: [
+      "babel-loader",
+      "eslint-loader",
+    ],
+  }
 
 module.exports = {
   context: path.join(__dirname, Path.SRC),
@@ -44,6 +53,7 @@ module.exports = {
   entry: Path.ENTRY,
   module: {
     loaders: [
+      ESLINT_LOADER,
       REACT_BABEL_LOADER,
       SCSS_LOADER,
       REACT_IMAGES_LOADER
