@@ -21,6 +21,7 @@
     "camelcase": "error",
     "keyword-spacing": "error",
     "space-infix-ops": "error",
+    "object-curly-spacing": [2, "always"],
     "react/jsx-no-bind": ["error", {
       "allowArrowFunctions": true,
       "allowBind": false,
