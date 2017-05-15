@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import style from './style.scss';
 
 class InstrumentImage extends Component {
+  static propTypes = {
+    instrument: React.PropTypes.string
+  }
   render() {
     const {
       instrument

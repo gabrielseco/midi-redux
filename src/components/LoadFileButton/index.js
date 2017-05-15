@@ -17,9 +17,7 @@ class LoadFileButton extends Component {
     return (
       <div className='file-field input-field load-file'>
         <input type='file' onChange={readMidiFile} />
-        <button className='btn load-file-button'>
-
-        </button>
+        <button className='btn load-file-button' />
       </div>
     );
   }

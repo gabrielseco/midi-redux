@@ -5,6 +5,16 @@ import { Circle } from 'rc-progress';
 import style from './style.scss';
 
 class MusicFeedback extends Component {
+  static propTypes = {
+    song: React.PropTypes.string,
+    isMidiPlaying: React.PropTypes.bool,
+    isPlayerPlaying: React.PropTypes.bool,
+    deltaTime: React.PropTypes.number,
+    readMidiFile: React.PropTypes.func,
+    fileName: React.PropTypes.string,
+    maxDeltaTime: React.PropTypes.number,
+    tempo: React.PropTypes.number
+  }
   constructor(props) {
     super(props);
   }

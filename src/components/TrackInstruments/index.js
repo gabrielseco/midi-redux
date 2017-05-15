@@ -6,6 +6,11 @@ import InstrumentImage from '../InstrumentImage';
 import style from './style.scss';
 
 class TrackInstruments extends Component {
+  static propTypes = {
+    tracks: React.PropTypes.array(React.PropTypes.object),
+    instruments: React.PropTypes.array(React.PropTypes.object),
+    deltaTime: React.PropTypes.number
+  }
   constructor(props) {
     super(props);
   }

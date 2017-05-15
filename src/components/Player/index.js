@@ -9,6 +9,13 @@ import TrackInstruments from '../TrackInstruments';
 import style from './style.scss';
 
 class Player extends Component {
+  static propTypes = {
+    file: React.PropTypes.object,
+    midi: React.PropTypes.object,
+    player: React.PropTypes.object,
+    readMidiFile: React.PropTypes.func,
+    play: React.PropTypes.func
+  }
   constructor(props) {
     super(props);
   }
