@@ -25,7 +25,7 @@ export const MIDIErrors = {
     const TRACK_ID = 'MTrk';
 
     if (trackChunk.id !== TRACK_ID) {
-      throw "Unexpected chunk - expected MTrk, got "+ trackChunk.id;
+      throw "Unexpected chunk - expected MTrk, got " + trackChunk.id;
     }
   },
 

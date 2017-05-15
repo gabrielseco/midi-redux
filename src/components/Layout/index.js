@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import * as PlayerActions from '../../action-creators/PlayerActions';
 import * as FileActions from '../../action-creators/FileActions';
 
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import Player from '../Player';
 import { Line } from 'rc-progress';
@@ -23,6 +23,17 @@ function mapDispatchToProps(dispatch) {
 }
 
 class Layout extends Component {
+  static propTypes = {
+    midi: React.PropTypes.object,
+    player: React.PropTypes.object,
+    file: React.PropTypes.object,
+    playerActions: {
+      play: React.PropTypes.func
+    },
+    fileActions: {
+      readMidiFile: React.PropTypes.func
+    }
+  }
   constructor(props) {
     super(props);
   }
@@ -39,9 +50,9 @@ class Layout extends Component {
     const readMidiFile = this.props.fileActions.readMidiFile;
 
     return (
-      <section className="section layout no-pad-bot">
-        <div className="container layout-container">
-          <h1 class="layout-title">MIDI File Player</h1>
+      <section className='section layout no-pad-bot'>
+        <div className='container layout-container'>
+          <h1 className='layout-title'>MIDI File Player</h1>
           <Player
             midi={midi}
             player={player}

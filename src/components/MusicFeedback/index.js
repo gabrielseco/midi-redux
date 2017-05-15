@@ -43,13 +43,13 @@ class MusicFeedback extends Component {
     }
 
     return (
-      <div class="feedback">
-        <p class="feedback-tempo">{feedback}</p>
+      <div className='feedback'>
+        <p className='feedback-tempo'>{feedback}</p>
         <Circle
           percent={percent}
           strokeWidth={strokeWidth}
           strokeColor={strokeColor}
-          className={className}/>
+          className={className} />
         <p>Tempo</p>
       </div>
     );

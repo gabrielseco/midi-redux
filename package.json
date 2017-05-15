@@ -4,8 +4,7 @@
   "description": "Read and play MIDI files using Redux (and React)",
   "main": "webpack.config.js",
   "scripts": {
-    "prestart": "npm run production",
-    "start": "webpack-dev-server",
+    "start": "node server.js",
     "clean": "rimraf dist",
     "production": "cross-env npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint './src/**/*.js' './src/**/*.test.js' ",

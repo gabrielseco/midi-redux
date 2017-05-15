@@ -5,7 +5,7 @@ const initialState = {
   fileName: null
 };
 
-export default function MIDIFileReducer(state=initialState, action) {
+export default function MIDIFileReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case FileAction.LOAD_FILE:

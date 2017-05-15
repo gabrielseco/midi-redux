@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import style from './style.scss';
 
 class LoadFileButton extends Component {
+  static propTypes = {
+    readMidiFile: React.PropTypes.func
+  }
   constructor(props) {
     super(props);
   }
@@ -12,9 +15,9 @@ class LoadFileButton extends Component {
     const { readMidiFile } = this.props;
 
     return (
-      <div className="file-field input-field load-file">
-        <input type="file" onChange={readMidiFile}/>
-        <button className="btn load-file-button">
+      <div className='file-field input-field load-file'>
+        <input type='file' onChange={readMidiFile} />
+        <button className='btn load-file-button'>
 
         </button>
       </div>
