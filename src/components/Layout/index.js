@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import * as PlayerActions from '../../action-creators/PlayerActions';
 import * as FileActions from '../../action-creators/FileActions';
@@ -24,11 +25,11 @@ function mapDispatchToProps(dispatch) {
 
 class Layout extends Component {
   static propTypes = {
-    midi: React.PropTypes.object,
-    player: React.PropTypes.object,
-    file: React.PropTypes.object,
-    playerActions: React.PropTypes.object,
-    fileActions: React.PropTypes.object
+    midi: PropTypes.object,
+    player: PropTypes.object,
+    file: PropTypes.object,
+    playerActions: PropTypes.object,
+    fileActions: PropTypes.object
   }
   constructor(props) {
     super(props);

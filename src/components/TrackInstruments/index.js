@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Line } from 'rc-progress';
 
@@ -7,9 +8,9 @@ import style from './style.scss';
 
 class TrackInstruments extends Component {
   static propTypes = {
-    tracks: React.PropTypes.array,
-    instruments: React.PropTypes.array,
-    deltaTime: React.PropTypes.number
+    tracks: PropTypes.array,
+    instruments: PropTypes.array,
+    deltaTime: PropTypes.number
   }
   constructor(props) {
     super(props);

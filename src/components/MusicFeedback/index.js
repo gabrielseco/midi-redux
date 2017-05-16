@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import LoadFileButton from '../LoadFileButton';
 import { Circle } from 'rc-progress';
@@ -6,14 +7,14 @@ import style from './style.scss';
 
 class MusicFeedback extends Component {
   static propTypes = {
-    song: React.PropTypes.string,
-    isMidiPlaying: React.PropTypes.bool,
-    isPlayerPlaying: React.PropTypes.bool,
-    deltaTime: React.PropTypes.number,
-    readMidiFile: React.PropTypes.func,
-    fileName: React.PropTypes.string,
-    maxDeltaTime: React.PropTypes.number,
-    tempo: React.PropTypes.number
+    song: PropTypes.string,
+    isMidiPlaying: PropTypes.bool,
+    isPlayerPlaying: PropTypes.bool,
+    deltaTime: PropTypes.number,
+    readMidiFile: PropTypes.func,
+    fileName: PropTypes.string,
+    maxDeltaTime: PropTypes.number,
+    tempo: PropTypes.number
   }
   constructor(props) {
     super(props);

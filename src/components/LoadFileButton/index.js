@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 
 import style from './style.scss';
 
 class LoadFileButton extends Component {
   static propTypes = {
-    readMidiFile: React.PropTypes.func
+    readMidiFile: PropTypes.func
   }
   constructor(props) {
     super(props);

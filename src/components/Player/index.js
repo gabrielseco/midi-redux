@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import MusicFeedback from '../MusicFeedback';
@@ -10,11 +11,11 @@ import style from './style.scss';
 
 class Player extends Component {
   static propTypes = {
-    file: React.PropTypes.object,
-    midi: React.PropTypes.object,
-    player: React.PropTypes.object,
-    readMidiFile: React.PropTypes.func,
-    play: React.PropTypes.func
+    file: PropTypes.object,
+    midi: PropTypes.object,
+    player: PropTypes.object,
+    readMidiFile: PropTypes.func,
+    play: PropTypes.func
   }
   constructor(props) {
     super(props);
