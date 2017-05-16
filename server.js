@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config');
+const opn = require('opn');
 const PORT = 3000 || PROCESS.ENV.PORT;
+const URL = `http://localhost:${PORT}`;
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
@@ -27,6 +29,6 @@ new WebpackDevServer(webpack(config), {
   if (err) {
     return console.log(err);
   }
-
-  console.log(`Listening at http://localhost:${PORT}`);
+  console.log(`Listening at ${URL}`);
+  opn(URL);
 });

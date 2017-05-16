@@ -27,12 +27,8 @@ class Layout extends Component {
     midi: React.PropTypes.object,
     player: React.PropTypes.object,
     file: React.PropTypes.object,
-    playerActions: {
-      play: React.PropTypes.func
-    },
-    fileActions: {
-      readMidiFile: React.PropTypes.func
-    }
+    playerActions: React.PropTypes.object,
+    fileActions: React.PropTypes.object
   }
   constructor(props) {
     super(props);

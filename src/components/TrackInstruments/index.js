@@ -7,8 +7,8 @@ import style from './style.scss';
 
 class TrackInstruments extends Component {
   static propTypes = {
-    tracks: React.PropTypes.array(React.PropTypes.object),
-    instruments: React.PropTypes.array(React.PropTypes.object),
+    tracks: React.PropTypes.array,
+    instruments: React.PropTypes.array,
     deltaTime: React.PropTypes.number
   }
   constructor(props) {
