@@ -10,7 +10,7 @@ const initialState = {
   audioContext: new AudioContext()
 };
 
-export default function MIDIEventsReducer(state=initialState, action) {
+export default function MIDIEventsReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {

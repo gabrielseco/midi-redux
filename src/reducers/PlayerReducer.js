@@ -7,7 +7,7 @@ const initialState = {
   ticksPerBeat: null
 };
 
-export default function MIDIPlayerReducer(state=initialState, action) {
+export default function MIDIPlayerReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
