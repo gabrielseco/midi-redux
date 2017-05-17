@@ -16,4 +16,4 @@ const app = document.getElementById('app');
 ReactDOM.render(
   <Provider store={store}>
     <Layout />
- </Provider>, app);
+  </Provider>, app);

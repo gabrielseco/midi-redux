@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import MusicFeedback from '../MusicFeedback';
@@ -9,6 +10,13 @@ import TrackInstruments from '../TrackInstruments';
 import style from './style.scss';
 
 class Player extends Component {
+  static propTypes = {
+    file: PropTypes.object,
+    midi: PropTypes.object,
+    player: PropTypes.object,
+    readMidiFile: PropTypes.func,
+    play: PropTypes.func
+  }
   constructor(props) {
     super(props);
   }
@@ -23,9 +31,9 @@ class Player extends Component {
     } = this.props;
 
     return (
-      <section class="card player">
+      <section className='card player'>
 
-        <header class="card-content center-align player-content">
+        <header className='card-content center-align player-content'>
           <PlayButton
             play={play}
           />
@@ -47,7 +55,7 @@ class Player extends Component {
           <p>Song: {file.fileName}</p>
         </header>
 
-        <section class="card-action player-action">
+        <section className='card-action player-action'>
           <TrackInstruments
             tracks={midi.tracks}
             deltaTime={midi.deltaTime}

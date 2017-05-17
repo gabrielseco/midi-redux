@@ -1,11 +1,17 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Line } from 'rc-progress';
 
 import InstrumentImage from '../InstrumentImage';
 import style from './style.scss';
 
 class TrackInstruments extends Component {
+  static propTypes = {
+    tracks: PropTypes.array,
+    instruments: PropTypes.array,
+    deltaTime: PropTypes.number
+  }
   constructor(props) {
     super(props);
   }
@@ -33,19 +39,19 @@ class TrackInstruments extends Component {
           <InstrumentImage
             instrument={instrument.image}
           />
-          <div className="instrument-progress col s11">
+          <div className='instrument-progress col s11'>
             {instrument.id}
             <Line
               percent={percent}
               strokeWidth={strokeWidth}
               trailColor={trailColor}
-              strokeColor={strokeColor}/>
+              strokeColor={strokeColor} />
           </div>
         </li>
       )
     });
 
-    return(
+    return (
       <ul className='instruments'>
         {tracksList}
       </ul>

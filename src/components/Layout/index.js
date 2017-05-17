@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+<<<<<<< .merge_file_pKrvcA
+=======
+import PropTypes from 'prop-types';
+>>>>>>> .merge_file_nKoiLl
 
 import * as PlayerActions from '../../action-creators/PlayerActions';
 import * as FileActions from '../../action-creators/FileActions';
@@ -22,7 +26,18 @@ export function mapDispatchToProps(dispatch) {
   };
 }
 
+<<<<<<< .merge_file_pKrvcA
 export class Layout extends Component {
+=======
+class Layout extends Component {
+  static propTypes = {
+    midi: PropTypes.object,
+    player: PropTypes.object,
+    file: PropTypes.object,
+    playerActions: PropTypes.object,
+    fileActions: PropTypes.object
+  }
+>>>>>>> .merge_file_nKoiLl
   constructor(props) {
     super(props);
   }
@@ -39,10 +54,17 @@ export class Layout extends Component {
     const readMidiFile = this.props.fileActions.readMidiFile;
 
     return (
+<<<<<<< .merge_file_pKrvcA
       <section className="section layout no-pad-bot">
         <div className="container layout-container">
           <h1 class="layout-title">MIDI File Player</h1>
          <Player
+=======
+      <section className='section layout no-pad-bot'>
+        <div className='container layout-container'>
+          <h1 className='layout-title'>MIDI File Player</h1>
+          <Player
+>>>>>>> .merge_file_nKoiLl
             midi={midi}
             player={player}
             file={file}

@@ -14,7 +14,11 @@ import { MIDIEventsReader } from '../utils/MIDIEventsReader';
 import { MIDIInstrumentImages } from '../constants/MIDIInstrumentImages';
 
 import {
-  MIDIInstruments, SOUNDS_PATH, SOUNDS_FILETYPE, SOUNDS_FILE_EXTENSION } from '../constants/MIDIInstruments';
+  MIDIInstruments,
+  SOUNDS_PATH,
+  SOUNDS_FILETYPE,
+  SOUNDS_FILE_EXTENSION
+} from '../constants/MIDIInstruments';
 
 export function play() {
   return (dispatch, getState) => {
@@ -25,14 +29,14 @@ export function play() {
 // TODO
 export function pause() {
   return (dispatch, getState) => {
-    dispatch({type: PlayerAction.PAUSE});
+    dispatch({ type: PlayerAction.PAUSE });
   };
 }
 
 // TODO
 export function stop() {
   return (dispatch, getState) => {
-    dispatch({type: PlayerAction.STOP});
+    dispatch({ type: PlayerAction.STOP });
   };
 }
 
@@ -53,15 +57,15 @@ function _readTracks() {
       ticksPerBeat;
 
     state = getState();
-    song  = state.file.song;
+    song = state.file.song;
 
-    stream       = MIDIStreamReader.readStream(song);
-    header       = _readHeader.call(this, stream, song);
+    stream = MIDIStreamReader.readStream(song);
+    header = _readHeader.call(this, stream, song);
     ticksPerBeat = header.ticksPerBeat;
-    instruments  = new Array(header.trackCount);
-    tracks       = _initTracks.call(this, header.trackCount);
+    instruments = new Array(header.trackCount);
+    tracks = _initTracks.call(this, header.trackCount);
 
-    trackActions       = [];
+    trackActions = [];
     instrumentPromises = [];
 
     dispatch({
@@ -94,7 +98,7 @@ function _readTracks() {
     return Promise
       .all(instrumentPromises)
       .then(_callMidiActions.bind(this, trackActions, dispatch));
-    };
+  };
 }
 
 function _loadInstrument(trackIndex, midiMessage) {
@@ -120,7 +124,7 @@ function _loadInstrument(trackIndex, midiMessage) {
       instruments[trackIndex] = instrument;
 
       dispatch({
-        type:    PlayerAction.LOAD_INSTRUMENT,
+        type: PlayerAction.LOAD_INSTRUMENT,
         payload: { instruments }
       });
 
@@ -131,7 +135,8 @@ function _loadInstrument(trackIndex, midiMessage) {
 }
 
 function _initTracks(trackCount) {
-  let i = 0, tracks = [];
+  let i = 0,
+    tracks = [];
 
   for (i; i < trackCount; i++) {
     tracks.push({
@@ -157,8 +162,8 @@ function _readHeader(stream, data) {
   MIDIErrors.isValidHeaderChunk(headerChunk);
 
   headerStream = MIDIStreamReader.readStream(headerChunk.data);
-  formatType   = headerStream.readInt16();
-  trackCount   = headerStream.readInt16();
+  formatType = headerStream.readInt16();
+  trackCount = headerStream.readInt16();
   timeDivision = headerStream.readInt16();
 
   MIDIErrors.isValidTimeDivision(timeDivision);

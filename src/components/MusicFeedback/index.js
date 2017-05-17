@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import LoadFileButton from '../LoadFileButton';
 import { Circle } from 'rc-progress';
 import style from './style.scss';
 
 class MusicFeedback extends Component {
+  static propTypes = {
+    song: PropTypes.string,
+    isMidiPlaying: PropTypes.bool,
+    isPlayerPlaying: PropTypes.bool,
+    deltaTime: PropTypes.number,
+    readMidiFile: PropTypes.func,
+    fileName: PropTypes.string,
+    maxDeltaTime: PropTypes.number,
+    tempo: PropTypes.number
+  }
   constructor(props) {
     super(props);
   }
@@ -43,13 +54,13 @@ class MusicFeedback extends Component {
     }
 
     return (
-      <div class="feedback">
-        <p class="feedback-tempo">{feedback}</p>
+      <div className='feedback'>
+        <p className='feedback-tempo'>{feedback}</p>
         <Circle
           percent={percent}
           strokeWidth={strokeWidth}
           strokeColor={strokeColor}
-          className={className}/>
+          className={className} />
         <p>Tempo</p>
       </div>
     );

@@ -12,12 +12,12 @@ export function programChange(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.PROGRAM_CHANGE;
+    state = getState();
+    type = MIDIAction.PROGRAM_CHANGE;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -28,7 +28,7 @@ export function programChange(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -48,12 +48,12 @@ export function noteOn(trackIndex, midiMessage) {
       tracks,
       velocity;
 
-    state  = getState();
-    type   = MIDIAction.NOTE_ON;
+    state = getState();
+    type = MIDIAction.NOTE_ON;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -69,7 +69,7 @@ export function noteOn(trackIndex, midiMessage) {
     velocity = midiMessage.velocity;
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
 
       InstrumentUtils.play(midiMessage.noteNumber, instrument, state.midi.audioContext.currentTime, velocity);
 
@@ -87,12 +87,12 @@ export function sequenceNumber(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.SEQUENCE_NUMBER;
+    state = getState();
+    type = MIDIAction.SEQUENCE_NUMBER;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -103,7 +103,7 @@ export function sequenceNumber(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -118,12 +118,12 @@ export function text(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.TEXT;
+    state = getState();
+    type = MIDIAction.TEXT;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -134,7 +134,7 @@ export function text(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -155,7 +155,7 @@ export function trackName(trackIndex, midiMessage) {
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -166,7 +166,7 @@ export function trackName(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -181,12 +181,12 @@ export function lyrics(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.LYRICS;
+    state = getState();
+    type = MIDIAction.LYRICS;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -197,7 +197,7 @@ export function lyrics(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -212,12 +212,12 @@ export function marker(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.MARKER;
+    state = getState();
+    type = MIDIAction.MARKER;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -228,7 +228,7 @@ export function marker(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -243,12 +243,12 @@ export function cuePoint(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.CUE_POINT;
+    state = getState();
+    type = MIDIAction.CUE_POINT;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -259,7 +259,7 @@ export function cuePoint(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -274,12 +274,12 @@ export function midiChannelPrefix(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.MIDI_CHANNEL_PREFIX;
+    state = getState();
+    type = MIDIAction.MIDI_CHANNEL_PREFIX;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -290,7 +290,7 @@ export function midiChannelPrefix(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -308,12 +308,12 @@ export function endOfTrack(trackIndex, midiMessage) {
       deltaTime,
       deltaLength;
 
-    state  = getState();
-    type   = MIDIAction.END_OF_TRACK;
+    state = getState();
+    type = MIDIAction.END_OF_TRACK;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -326,7 +326,7 @@ export function endOfTrack(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -342,14 +342,14 @@ export function setTempo(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.SET_TEMPO;
+    state = getState();
+    type = MIDIAction.SET_TEMPO;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
     tempo = TimeUtils.getBMP(midiMessage.microsecondsPerBeat, state.player.ticksPerBeat);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -361,7 +361,7 @@ export function setTempo(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -376,12 +376,12 @@ export function smpteOffset(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.SMPTE_OFFSET;
+    state = getState();
+    type = MIDIAction.SMPTE_OFFSET;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -392,7 +392,7 @@ export function smpteOffset(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -408,14 +408,14 @@ export function timeSignature(trackIndex, midiMessage) {
       deltaTime,
       signature;
 
-    state  = getState();
-    type   = MIDIAction.TIME_SIGNATURE;
+    state = getState();
+    type = MIDIAction.TIME_SIGNATURE;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
     signature = midiMessage.thirtyseconds;
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -427,7 +427,7 @@ export function timeSignature(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -442,12 +442,12 @@ export function keySignature(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.KEY_SIGNATURE;
+    state = getState();
+    type = MIDIAction.KEY_SIGNATURE;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -458,7 +458,7 @@ export function keySignature(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -473,12 +473,12 @@ export function sequencerSpecific(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.SEQUENCER_SPECIFIC;
+    state = getState();
+    type = MIDIAction.SEQUENCER_SPECIFIC;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -489,7 +489,7 @@ export function sequencerSpecific(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -504,12 +504,12 @@ export function sysEx(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.SYS_EX;
+    state = getState();
+    type = MIDIAction.SYS_EX;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -520,7 +520,7 @@ export function sysEx(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -535,12 +535,12 @@ export function dividedSysEx(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.DIVIDED_SYS_EX;
+    state = getState();
+    type = MIDIAction.DIVIDED_SYS_EX;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -551,7 +551,7 @@ export function dividedSysEx(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -566,12 +566,12 @@ export function last(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.LAST;
+    state = getState();
+    type = MIDIAction.LAST;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -582,7 +582,7 @@ export function last(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -599,12 +599,12 @@ export function noteOff(trackIndex, midiMessage) {
       instrument,
       instruments;
 
-    state  = getState();
-    type   = MIDIAction.NOTE_OFF;
+    state = getState();
+    type = MIDIAction.NOTE_OFF;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -618,7 +618,7 @@ export function noteOff(trackIndex, midiMessage) {
     instrument = instruments[trackIndex];
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
 
       if (instrument) {
         instrument.stop();
@@ -638,12 +638,12 @@ export function noteAftertouch(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.NOTE_AFTER_TOUCH;
+    state = getState();
+    type = MIDIAction.NOTE_AFTER_TOUCH;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -654,7 +654,7 @@ export function noteAftertouch(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -669,12 +669,12 @@ export function channelAftertouch(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.CHANNEL_AFTER_TOUCH;
+    state = getState();
+    type = MIDIAction.CHANNEL_AFTER_TOUCH;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -685,7 +685,7 @@ export function channelAftertouch(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -700,12 +700,12 @@ export function pitchBend(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.PITCH_BEND;
+    state = getState();
+    type = MIDIAction.PITCH_BEND;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -716,7 +716,7 @@ export function pitchBend(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -731,16 +731,16 @@ export function controller(trackIndex, midiMessage) {
       deltaTime,
       volumes;
 
-    state  = getState();
-    type   = MIDIAction.CONTROLLER;
+    state = getState();
+    type = MIDIAction.CONTROLLER;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
     volumes = state.midi.volumes || new Array(tracks.length);
 
     deltaTime = (midiMessage.deltaTime !== 0) ?
-      _getDeltaSeconds.call(this, tracks, trackIndex, state)
-      : midiMessage.deltaTime;
+      _getDeltaSeconds.call(this, tracks, trackIndex, state) :
+      midiMessage.deltaTime;
 
     if (midiMessage.controllerType === MIDIControllerTypes.VOLUME) {
       volumes[trackIndex] = midiMessage.value;
@@ -755,7 +755,7 @@ export function controller(trackIndex, midiMessage) {
     }
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -770,12 +770,12 @@ export function unknown(trackIndex, midiMessage) {
       tracks,
       deltaTime;
 
-    state  = getState();
-    type   = MIDIAction.UNKNOWN;
+    state = getState();
+    type = MIDIAction.UNKNOWN;
     tracks = _incrementTrackInfo.call(
       this, state.player.tracks, trackIndex, midiMessage);
 
-    [ deltaTime, tracks ] = _getDeltaSeconds.call(
+    [deltaTime, tracks] = _getDeltaSeconds.call(
       this, tracks, trackIndex, state);
 
     payload = {
@@ -786,7 +786,7 @@ export function unknown(trackIndex, midiMessage) {
     };
 
     const timeoutId = setTimeout(() => {
-      dispatch({type, payload});
+      dispatch({ type, payload });
       clearTimeout(timeoutId);
     }, deltaTime);
   };
@@ -814,6 +814,6 @@ function _incrementTrackInfo(tracks, trackIndex, midiMessage) {
 
 function _getMaxDeltaTime(deltaTime, maxDeltaTime) {
   return maxDeltaTime > deltaTime ?
-    maxDeltaTime
-    : deltaTime;
+    maxDeltaTime :
+    deltaTime;
 }
