@@ -9,7 +9,7 @@ import * as FileActions from '../../action-creators/FileActions';
  
 describe('Layout test', () => {
   it('should find the h1 title', () => {
-    const wrapper = shallow(<Layout playerActions={PlayerActions} fileActions={FileActions}/>);
+    const wrapper = shallow(<Layout playerActions={PlayerActions} fileActions={FileActions} />);
     expect(wrapper.find('h1').text()).toBe('MIDI File Player');
   });
 

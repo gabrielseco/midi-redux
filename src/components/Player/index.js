@@ -10,13 +10,6 @@ import TrackInstruments from '../TrackInstruments';
 import style from './style.scss';
 
 class Player extends Component {
-  static propTypes = {
-    file: PropTypes.object,
-    midi: PropTypes.object,
-    player: PropTypes.object,
-    readMidiFile: PropTypes.func,
-    play: PropTypes.func
-  }
   constructor(props) {
     super(props);
   }
@@ -66,5 +59,13 @@ class Player extends Component {
     );
   }
 };
+
+Player.propTypes = {
+  file: PropTypes.object,
+  midi: PropTypes.object,
+  player: PropTypes.object,
+  readMidiFile: PropTypes.func,
+  play: PropTypes.func
+}
 
 export default connect()(Player);

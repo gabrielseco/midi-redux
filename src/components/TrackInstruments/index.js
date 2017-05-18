@@ -7,11 +7,6 @@ import InstrumentImage from '../InstrumentImage';
 import style from './style.scss';
 
 class TrackInstruments extends Component {
-  static propTypes = {
-    tracks: PropTypes.array,
-    instruments: PropTypes.array,
-    deltaTime: PropTypes.number
-  }
   constructor(props) {
     super(props);
   }
@@ -57,6 +52,12 @@ class TrackInstruments extends Component {
       </ul>
     );
   }
+}
+
+TrackInstruments.propTypes = {
+  tracks: PropTypes.array,
+  instruments: PropTypes.array,
+  deltaTime: PropTypes.number
 }
 
 export default connect()(TrackInstruments);

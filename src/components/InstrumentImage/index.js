@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 import style from './style.scss';
 
 class InstrumentImage extends Component {
-  static propTypes = {
-    instrument: PropTypes.string
-  }
   render() {
     const {
       instrument
@@ -17,6 +14,10 @@ class InstrumentImage extends Component {
 
     return <div className={className} />
   }
+}
+
+InstrumentImage.propTypes = {
+  instrument: PropTypes.string
 }
 
 export default connect()(InstrumentImage);

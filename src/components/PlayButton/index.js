@@ -6,9 +6,6 @@ import { connect } from 'react-redux';
 import style from './style.scss';
 
 class PlayButton extends Component {
-  static propTypes = {
-    play: PropTypes.func
-  }
   constructor(props) {
     super(props);
   }
@@ -24,5 +21,9 @@ class PlayButton extends Component {
     );
   }
 };
+
+PlayButton.propTypes = {
+    play: PropTypes.func
+}
 
 export default connect()(PlayButton);

@@ -6,9 +6,6 @@ import { connect } from 'react-redux';
 import style from './style.scss';
 
 class LoadFileButton extends Component {
-  static propTypes = {
-    readMidiFile: PropTypes.func
-  }
   constructor(props) {
     super(props);
   }
@@ -24,5 +21,8 @@ class LoadFileButton extends Component {
     );
   }
 };
+LoadFileButton.propTypes = {
+  readMidiFile: PropTypes.func
+}
 
 export default connect()(LoadFileButton);

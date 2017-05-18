@@ -6,16 +6,6 @@ import { Circle } from 'rc-progress';
 import style from './style.scss';
 
 class MusicFeedback extends Component {
-  static propTypes = {
-    song: PropTypes.string,
-    isMidiPlaying: PropTypes.bool,
-    isPlayerPlaying: PropTypes.bool,
-    deltaTime: PropTypes.number,
-    readMidiFile: PropTypes.func,
-    fileName: PropTypes.string,
-    maxDeltaTime: PropTypes.number,
-    tempo: PropTypes.number
-  }
   constructor(props) {
     super(props);
   }
@@ -66,5 +56,16 @@ class MusicFeedback extends Component {
     );
   }
 };
+
+MusicFeedback.propTypes = {
+  song: PropTypes.string,
+  isMidiPlaying: PropTypes.bool,
+  isPlayerPlaying: PropTypes.bool,
+  deltaTime: PropTypes.number,
+  readMidiFile: PropTypes.func,
+  fileName: PropTypes.string,
+  maxDeltaTime: PropTypes.number,
+  tempo: PropTypes.number
+}
 
 export default connect()(MusicFeedback);
