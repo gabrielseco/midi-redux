@@ -69,6 +69,7 @@
   "author": "Elena Torro",
   "license": "MIT",
   "dependencies": {
+    "apply-classes": "^1.0.1",
     "babel-loader": "^6.4.1",
     "classnames": "^2.2.5",
     "file-loader": "^0.10.1",
