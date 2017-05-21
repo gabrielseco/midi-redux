@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import style from './style.scss';
 
-class InstrumentImage extends Component {
+export class InstrumentImage extends Component {
   render() {
     const {
       instrument
