@@ -10,6 +10,7 @@
     "lint": "eslint app",
     "test": "jest",
     "test:watch": "jest --watch --coverage",
+    "coverage": "open ./coverage/lcov-report/index.html",
     "precommit": "cross-env npm run lint && npm test",
     "prepush": "cross-env npm run lint && npm test"
   },

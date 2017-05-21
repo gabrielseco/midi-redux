@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import style from './style.scss';
 
-class PlayButton extends Component {
+export class PlayButton extends Component {
   constructor(props) {
     super(props);
   }

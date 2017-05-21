@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import style from './style.scss';
 
-class LoadFileButton extends Component {
+export class LoadFileButton extends Component {
   constructor(props) {
     super(props);
   }
