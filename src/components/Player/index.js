@@ -9,7 +9,7 @@ import TrackInstruments from '../TrackInstruments';
 
 import style from './style.scss';
 
-class Player extends Component {
+export class Player extends Component {
   constructor(props) {
     super(props);
   }
