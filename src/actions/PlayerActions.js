@@ -1,6 +1,6 @@
 export default Object.freeze({
-  PLAY:  'play',
-  PAUSE: 'pause',
-  STOP:  'stop',
-  LOAD_INSTRUMENT: 'loadInstrument'
+  PLAY:  'PLAY',
+  PAUSE: 'PAUSE',
+  STOP:  'STOP',
+  LOAD_INSTRUMENT: 'LOAD_INSTRUMENT'
 });

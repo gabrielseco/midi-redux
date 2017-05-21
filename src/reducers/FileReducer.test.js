@@ -20,16 +20,6 @@ describe('FileAction', () => {
     expect(result.fileName).toEqual(fileName);
   });
 
-  it('it should dispatch INCORRECT_FILE', () => {
-    const action = {
-    type: FileAction.INCORRECT_FILE,
-      payload: null
-    }
-    const result = MIDIFileReducer(initialState, action);
-
-    expect(result.incorrectFile).toBeTruthy();
-  });
-
   it('should return the default state ', () => {
     expect(MIDIFileReducer(undefined, TestUtils.ActionNullable())).toEqual(initialState);
   });

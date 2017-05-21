@@ -5,7 +5,7 @@ import LoadFileButton from '../LoadFileButton';
 import { Circle } from 'rc-progress';
 import style from './style.scss';
 
-class MusicFeedback extends Component {
+export class MusicFeedback extends Component {
   constructor(props) {
     super(props);
   }
@@ -15,10 +15,6 @@ class MusicFeedback extends Component {
       song,
       isMidiPlaying,
       isPlayerPlaying,
-      deltaTime,
-      readMidiFile,
-      fileName,
-      maxDeltaTime,
       tempo
     } = this.props;
 
@@ -61,10 +57,6 @@ MusicFeedback.propTypes = {
   song: PropTypes.string,
   isMidiPlaying: PropTypes.bool,
   isPlayerPlaying: PropTypes.bool,
-  deltaTime: PropTypes.number,
-  readMidiFile: PropTypes.func,
-  fileName: PropTypes.string,
-  maxDeltaTime: PropTypes.number,
   tempo: PropTypes.number
 }
 

@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Player from '../Player';
-import Notification from '../Notification';
 import { Line } from 'rc-progress';
 
 import style from './style.scss';
@@ -51,7 +50,6 @@ export class Layout extends Component {
             readMidiFile={readMidiFile}
             play={play}
           />
-          <Notification />
         </div>
       </section>
     );

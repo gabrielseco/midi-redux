@@ -39,8 +39,6 @@ export class Player extends Component {
           <MusicFeedback
             song={file.song}
             tempo={midi.tempo}
-            fileName={file.fileName}
-            readMidiFile={readMidiFile}
             isMidiPlaying={midi.isPlaying}
             isPlayerPlaying={player.isPlaying}
           />
